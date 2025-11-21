@@ -1,4 +1,4 @@
-package L3;
+package generics_3;
 
 public class ParametrizedClass2 {
     public static void main(String[] args) {
