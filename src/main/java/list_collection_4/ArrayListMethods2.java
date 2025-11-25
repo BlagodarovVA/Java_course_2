@@ -19,14 +19,20 @@ public class ArrayListMethods2 {
         studentList.add(student5);
         System.out.println(studentList);
 
+        /* remove */
         Student student6 = new Student("Karina", 'f', 21, 2, 9.1);
         // не удалится, т.к. нет в листе объекта с таким адресом
         // если переопределить метод equals, то удалится
-        studentList.remove(student6);
+//        studentList.remove(student6);
         System.out.println(studentList);
+
+        /* indexOf */
+        // поиск позиции элемента
+        // отработает, если переопределен метод equals
+        int index = studentList.indexOf(student6);
+        System.out.println("Индекс найденного объекта: " + index);
     }
 }
-
 
 
 class Student{
