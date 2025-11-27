@@ -30,11 +30,9 @@ public class BinarySearch {
         /* reverse */
         Collections.reverse(arrayList);     // перевернуть массив задом наперед
         System.out.println(arrayList);
+        /* shuffle */
         Collections.shuffle(arrayList);     // перемешать массив
         System.out.println(arrayList);
-
-
-
 
 
 
@@ -103,3 +101,4 @@ class Employee implements Comparable<Employee>{
         return result;
     }
 }
+
