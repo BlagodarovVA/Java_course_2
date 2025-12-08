@@ -39,5 +39,13 @@ public class HashmapEx1 {
         
         /* values */
         System.out.println(map1.values());              // возвращает все значения
+
+        Map<String, String> map2 = new HashMap<>();
+        map2.put("Valery", "Blagodarov");
+        map2.put("Diana", "Schneider");
+
+
+
+
     }
 }
