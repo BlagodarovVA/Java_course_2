@@ -6,6 +6,8 @@ import java.util.Objects;
 
 public class HashCodeEx1 {
     public static void main(String[] args) {
+        // ключом в Map должен быть imutable объект
+        // иначе при изменении атрибутов изменится и hashCode в мапе
         Map<Student, Double> map = new HashMap<>();
         Student st1 = new Student("Valery", "Blagodarov", 5);
         Student st2 = new Student("Katya", "Ivanova", 2);
@@ -28,6 +30,12 @@ public class HashCodeEx1 {
         for (Map.Entry<Student, Double> entry:map.entrySet()){
             System.out.print(entry.getKey() + ":" + entry.getValue());
         }
+
+        // параметрами указаны начальный размер и
+        // коэффициент заполнения до удвоения размера
+        Map<Integer, String> map2  = new HashMap<>(16, 0.75F);  // 16 и 0,75 - значения по умолчанию
+
+
     }
 }
 
