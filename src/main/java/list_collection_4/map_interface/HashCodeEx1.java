@@ -23,6 +23,11 @@ public class HashCodeEx1 {
 
         System.out.println(st1.hashCode());
         System.out.println(st4.hashCode());
+
+        /* entrySet */
+        for (Map.Entry<Student, Double> entry:map.entrySet()){
+            System.out.print(entry.getKey() + ":" + entry.getValue());
+        }
     }
 }
 
