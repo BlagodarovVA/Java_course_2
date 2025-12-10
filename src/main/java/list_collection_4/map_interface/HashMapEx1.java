@@ -3,7 +3,7 @@ package list_collection_4.map_interface;
 import java.util.HashMap;
 import java.util.Map;
 
-public class HashmapEx1 {
+public class HashMapEx1 {
     public static void main(String[] args) {
 
         Map<Integer, String> map1 = new HashMap<>();
