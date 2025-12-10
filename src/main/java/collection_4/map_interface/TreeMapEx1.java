@@ -1,4 +1,4 @@
-package list_collection_4.map_interface;
+package collection_4.map_interface;
 
 import java.util.TreeMap;
 
