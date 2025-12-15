@@ -1,4 +1,4 @@
-package nested_classes.local_inner_class;
+package nested_classes_5.local_inner_class;
 
 public class LocalInner2 {
     public static void main(String[] args) {

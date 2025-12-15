@@ -1,4 +1,4 @@
-package nested_classes;
+package nested_classes_5;
 
 public class Test {
     static class A{}

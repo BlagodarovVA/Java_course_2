@@ -1,4 +1,4 @@
-package nested_classes.anonymous_class;
+package nested_classes_5.anonymous_class;
 
 public class AnonymousClass {
     private int x = 5;
