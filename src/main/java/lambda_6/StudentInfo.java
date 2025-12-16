@@ -1,6 +1,8 @@
 package lambda_6;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class StudentInfo {
 
@@ -53,10 +55,38 @@ class Test{
         students.add(st5);
 
         StudentInfo info = new StudentInfo();
-        info.testStudents(students, (Student s) -> {return s.age < 20;});   // самый короткий вариант - лямбда
+
+//        Collections.sort(students, new Comparator<Student>() {
+//            @Override
+//            public int compare(Student s1, Student s2) {
+//                return s1.course - s2.course;
+//            }
+//        });
+
+        // сокращенно с помощью лямбда выражения
+        students.sort((stud1, stud2) -> stud1.course - stud2.course);
+
+        System.out.println(students);
         System.out.println("----------");
-        info.testStudents(students, (Student s) -> {return s.avgGrade >= 8;});
+
+
+        // самый короткий вариант заменить лямбдой
+        // стрелка разделяет параметры метода и тело метода
+        // если параметров больше чем 1 или указывается тип - нужны скобки
+        // если в теле несколько стейтментов, нужен полный вариант
+        info.testStudents(students, (Student s) -> {
+            System.out.println("hello");
+            return s.age < 20;
+        });
         System.out.println("----------");
+
+        info.testStudents(students, s -> s.avgGrade >= 8);              // самый короткий способ написания лямбды
+        System.out.println("----------");
+
+        // переменной можно присвоить лямбда выражение
+        StudentChecks sc = s -> s.avgGrade >= 8;
+        info.testStudents(students, sc);            // переменная вместо лямбды
+
         info.testStudents(students, (Student s) -> {return s.age>22 && s.avgGrade<8 && s.sex == 'm';});
 
 //        info.testStudents(students, new CheckOverGrade());
