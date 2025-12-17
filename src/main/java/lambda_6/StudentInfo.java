@@ -1,14 +1,13 @@
 package lambda_6;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.function.Predicate;
 
 public class StudentInfo {
 
-    void testStudents(ArrayList<Student> al, StudentChecks sc){
+    void testStudents(ArrayList<Student> al, Predicate<Student> pr){
         for(Student s:al){
-            if(sc.check(s)){
+            if(pr.test(s)){
                 System.out.println(s);
             }
         }
@@ -63,19 +62,20 @@ class Test{
 //            }
 //        });
 
-        // сокращенно с помощью лямбда выражения
-        students.sort((stud1, stud2) -> stud1.course - stud2.course);
+        // сокращенно, сортировка с помощью лямбда выражения
+//        students.sort((stud1, stud2) -> stud1.course - stud2.course);
+//
+//        System.out.println(students);
+//        System.out.println("----------");
 
-        System.out.println(students);
-        System.out.println("----------");
 
-
-        // самый короткий вариант заменить лямбдой
-        // стрелка разделяет параметры метода и тело метода
-        // если параметров больше чем 1 или указывается тип - нужны скобки
-        // если в теле несколько стейтментов, нужен полный вариант
+        /* самый короткий вариант заменить лямбдой
+          стрелка разделяет параметры метода и тело метода
+          если параметров больше чем 1 или указывается тип - нужны скобки
+          если в теле несколько стейтментов, нужен полный вариант
+         */
         info.testStudents(students, (Student s) -> {
-            System.out.println("hello");
+            //System.out.println("hello");
             return s.age < 20;
         });
         System.out.println("----------");
@@ -84,8 +84,8 @@ class Test{
         System.out.println("----------");
 
         // переменной можно присвоить лямбда выражение
-        StudentChecks sc = s -> s.avgGrade >= 8;
-        info.testStudents(students, sc);            // переменная вместо лямбды
+//        StudentChecks sc = s -> s.avgGrade >= 8;
+//        info.testStudents(students, sc);            // переменная вместо лямбды
 
         info.testStudents(students, (Student s) -> {return s.age>22 && s.avgGrade<8 && s.sex == 'm';});
 
@@ -99,6 +99,6 @@ class Test{
     }
 }
 
-interface StudentChecks{
-    boolean check (Student s);
-}
+//interface StudentChecks{
+//    boolean check (Student s);
+//}
