@@ -1,6 +1,6 @@
 package lambda_6;
 
-public class Test2 {
+public class Test1 {
     static void def(I i){
         System.out.println(i.abc("privet"));
     }

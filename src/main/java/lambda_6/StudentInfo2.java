@@ -14,7 +14,7 @@ public class StudentInfo2 {
     }
 }
 
-class Test3{
+class Test2 {
     public static void main(String[] args) {
         Student st1 = new Student("Valery", 'm', 24, 4, 7.7);
         Student st2 = new Student("Yuri", 'm', 27, 5, 6.4);
