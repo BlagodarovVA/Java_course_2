@@ -1,9 +1,10 @@
 package lambda_6;
 
 import java.util.ArrayList;
+import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class TestSupplier {
+public class TestSupplierConsumer {
     // метод-поставщик создает и возвращает объекты с переданными параметрами
     public static ArrayList<Car> createThreeCars(Supplier<Car> carSupplier, int qty){
         ArrayList<Car> al = new ArrayList<>();
@@ -13,11 +14,24 @@ public class TestSupplier {
         return  al;
     }
 
+    public static void changeCar(Car car, Consumer<Car> carConsumer){
+        carConsumer.accept(car);
+    }
+
+
     public static void main(String[] args) {
         ArrayList<Car> ourCars = createThreeCars(() -> new Car("Nissan", "silver", 1.6), 3);
         System.out.println("Our cars: " + ourCars);
+
+        changeCar(ourCars.getFirst(), car -> {
+            car.model = "Honda";
+            car.engine = 2.4;
+            System.out.println("upgraded car: " + car);
+        });
+        System.out.println("Our cars: " + ourCars);
     }
 }
+
 
 class Car {
     String model;
