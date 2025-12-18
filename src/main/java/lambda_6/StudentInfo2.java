@@ -5,9 +5,9 @@ import java.util.function.Predicate;
 
 public class StudentInfo2 {
 
-    void testStudents(ArrayList<Student> al, Predicate<Student> pr){
-        for(Student s:al){
-            if(pr.test(s)){
+    void testStudents(ArrayList<Student> al, Predicate<Student> pr) {
+        for (Student s : al) {
+            if (pr.test(s)) {
                 System.out.println(s);
             }
         }
@@ -29,7 +29,7 @@ class Test2 {
         students.add(st4);
         students.add(st5);
 
-        StudentInfo info = new StudentInfo();
+        StudentInfo2 info = new StudentInfo2();
 
 
         info.testStudents(students, (Student s) -> s.age < 20);
