@@ -25,6 +25,16 @@ public class Filter {
         students.add(st4);
         students.add(st5);
 
+        students.stream().map(item ->
+            {
+                item.setName(item.getName().toUpperCase());
+                return item;})
+                .filter(item -> item.getSex()=='f')
+                .sorted((x,y) -> x.getAge() - y.getAge())
+                .forEach(System.out::println);
+        System.out.println("----------");
+
+
         // сортировка по имени
         students = students.stream().sorted((x,y) ->
                 x.getName().compareTo(y.getName()))
