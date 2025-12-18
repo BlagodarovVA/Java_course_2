@@ -2,6 +2,7 @@ package stream_7;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Filter {
 
@@ -27,6 +28,10 @@ public class Filter {
                 item.getAge()>22 && item.getAvgGrade() < 8).toList();
 
         System.out.println(removeSq(students));
+
+//        Stream<Student> myStream = Stream.of(st1, st2, st3, st4, st5);
+//        myStream.filter(item ->
+//                item.getAge()>22 && item.getAvgGrade() < 8).toList();
     }
 }
 
