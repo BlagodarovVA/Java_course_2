@@ -25,6 +25,11 @@ public class Chaining2_methods {
 
         /* count */
 //        System.out.println(stream5.count());          // стрим нельзя переиспользовать, если он завершен
-        System.out.println(stream5.distinct().count());
+//        System.out.println(stream5.distinct().count());
+
+        /* peek */
+        System.out.println(stream5.distinct().peek(System.out::println).count());
+
+
     }
 }
