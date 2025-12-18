@@ -2,6 +2,7 @@ package stream_7;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Filter {
@@ -23,6 +24,12 @@ public class Filter {
         students.add(st3);
         students.add(st4);
         students.add(st5);
+
+        // сортировка по имени
+        students = students.stream().sorted((x,y) ->
+                x.getName().compareTo(y.getName()))
+                .collect(Collectors.toList());
+        System.out.println(removeSq(students));
 
         students = students.stream().filter(item ->
                 item.getAge()>22 && item.getAvgGrade() < 8).toList();
