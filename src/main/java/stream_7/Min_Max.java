@@ -3,7 +3,7 @@ package stream_7;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FindFirst {
+public class Min_Max {
     public static void main(String[] args) {
         Student st1 = new Student("Valery", 'm', 24, 4, 7.7);
         Student st2 = new Student("Yuri", 'm', 27, 5, 8.2);
@@ -17,15 +17,12 @@ public class FindFirst {
         students.add(st4);
         students.add(st5);
 
-        /* findFirst */
-        // берет первую запись из мапы
-        Student first = students.stream().map(item ->
-                {
-                    item.setName(item.getName().toUpperCase());
-                    return item;})
-                .filter(item -> item.getSex()=='f')
-                .sorted((x,y) -> x.getAge() - y.getAge())
-                .findFirst().get();
-        System.out.println(first);
+        Student minAge = students.stream().min((x,y) -> x.getAge() - y.getAge()).get();
+        System.out.println(minAge);
+
+        Student maxAge = students.stream().max((x,y) -> x.getAge() - y.getAge()).get();
+        System.out.println(maxAge);
     }
 }
+
+
