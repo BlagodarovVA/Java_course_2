@@ -6,7 +6,7 @@ public class InterruptionEx {
         InterruptedThread thread = new InterruptedThread();
         thread.start();
         Thread.sleep(2000);
-        //не прерывает поток, а показывает, что поток main хочет прервать поток thread
+        // не прерывает поток, а показывает, что поток main хочет прервать поток thread
         thread.interrupt();
 
         thread.join();
