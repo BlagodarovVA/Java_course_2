@@ -1,20 +1,22 @@
 package r8_multithreading;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 public class RunnableFactorial {
     static int factorialResult;
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, ExecutionException {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         Factorial factorial = new Factorial(7);
-        executorService.execute(factorial);
+//        executorService.execute(factorial);
+        Future future = executorService.submit(factorial);
         executorService.shutdown();
 
         // без этой строки результат выведется не дожидаясь окончания потока
         executorService.awaitTermination(10, TimeUnit.SECONDS);
+
+        System.out.println(future.get());                       // null
+        System.out.println(future.isDone());
         System.out.println("Результат: " + factorialResult);
     }
 }

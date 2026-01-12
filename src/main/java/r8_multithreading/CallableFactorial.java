@@ -9,9 +9,14 @@ public class CallableFactorial {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         Factorial2 factorial2 = new Factorial2(7);
         // вместо метода execute - submit, он возвращает результат задачи
+        // future - типа промиса в JS
         Future<Integer> future = executorService.submit(factorial2);
         try {
+            System.out.println(future.isDone());        // проверка, что такс завершен
+            System.out.println("Ожидаем результат...");
             factorialResult = future.get();     // get() - возвращает результат нужного нам типа
+            System.out.println("Получили результат...");
+            System.out.println(future.isDone());
         } catch (InterruptedException e) {      // исключение может вернуть метод call()
             throw new RuntimeException(e);
         } catch (ExecutionException e) {
@@ -42,6 +47,7 @@ class Factorial2 implements Callable<Integer>{
         int result = 1;
         for (int i = 1; i <= f; i++) {
             result *= i;
+            Thread.sleep(500);
         }
         return result;
     }
