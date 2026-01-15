@@ -6,9 +6,10 @@ import java.io.IOException;
 public class FileWriterEx {
     public static void main(String[] args) throws IOException {
         String rubai = "Едва дыша, салаты мы доели.\n" +
-                "Дойдя до края, примем вновь на грудь.\n" +
-                "У алкаша и самурая нету цели.\n" +
-                "У них двоих одно есть - только путь.\n";
+                        "Чуть протрезвев, мы примем вновь на грудь.\n" +
+                        "У алкаша и самурая нету цели.\n" +
+                        "У них двоих одно есть - только путь.";
+
         String s = "privet";
         FileWriter writer=null;
         try {
