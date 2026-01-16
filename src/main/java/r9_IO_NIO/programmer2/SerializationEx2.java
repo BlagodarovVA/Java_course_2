@@ -15,6 +15,7 @@ public class SerializationEx2 {
         ) {
             bestEmployee = (Employee) inputStream.readObject();
             System.out.println(bestEmployee);
+            System.out.println("Deserialization done!");
 
         } catch (IOException | ClassNotFoundException e) {
             throw new RuntimeException(e);

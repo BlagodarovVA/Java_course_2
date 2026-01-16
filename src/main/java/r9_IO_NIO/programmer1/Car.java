@@ -1,8 +1,12 @@
 package r9_IO_NIO.programmer1;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 public class Car implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1; // для обозначения версии класса
+
     String model;
     String color;
 
@@ -13,7 +17,7 @@ public class Car implements Serializable {
 
     @Override
     public String toString() {
-        return "{" +
+        return '{' +
                 "model='" + model + '\'' +
                 ", color='" + color + '\'' +
                 '}';
