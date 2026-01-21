@@ -32,11 +32,29 @@ public class ChannelBufferEx1 {
             }
             System.out.println(stih);
 
+            String text = "\nThere are only 2 ways to live your life." +
+                    "1 isas though nothing is a miracle. The otheris as" +
+                    "though everything is a miracle.";
+
+            ByteBuffer buffer3 = ByteBuffer.wrap(text.getBytes());  // делает тоже запись, но меньше кода
+            chanel.write(buffer3);
+
+//            ByteBuffer buffer2 = ByteBuffer.allocate(text.getBytes().length);   // размер буфера = размер текста в байтах
+//            buffer2.put(text.getBytes());           // запись в буффер
+//            buffer2.flip();                         // преключение режима буффера на чтение для записи в файл
+//            chanel.write(buffer2);
+
 
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 }
+
+
+
+
+
+
 
 
