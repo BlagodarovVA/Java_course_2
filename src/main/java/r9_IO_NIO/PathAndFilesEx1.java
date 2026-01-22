@@ -71,6 +71,13 @@ public class PathAndFilesEx1 {
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
 
+
+
+
+
+
+
+
     }
 }
 
