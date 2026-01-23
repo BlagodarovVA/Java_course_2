@@ -11,7 +11,6 @@ public class CopyFileTree {
         // 1 парам - откуда начинаем гулять, 2 парам - что делаем
         Files.walkFileTree(source, new MyFileVisitor2(source, destinacion));
         System.out.println("Done!");
-
     }
 }
 
