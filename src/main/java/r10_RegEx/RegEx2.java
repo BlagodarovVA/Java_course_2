@@ -35,9 +35,27 @@ public class RegEx2 {
 //        Pattern pattern1 = Pattern.compile("\\W");              // любой символ, кроме букв, цифр и _
 //        Pattern pattern1 = Pattern.compile("\\w+");             // одно или более повторений \w
 
-        String s1 = "poka abc Valery dom abstrakcionism";
+//        String s1 = "poka abc    Valery         dom   \nabstrakcionism";
         // из 1 слова может быть несколько соответствий, зависит от длины
-        Pattern pattern1 = Pattern.compile("\\w{4}");             // вывод из найденных соответствий указанного количества
+//        Pattern pattern1 = Pattern.compile("\\w{4}");             // вывод из найденных соответствий указанного количества
+//        Pattern pattern1 = Pattern.compile("\\w\\s+\\w");         // s - пробельные символы из [\t\n\r\f]
+
+//        String s1 = "abcd abce3 abcfa75abcg6abch------------------";
+//        Pattern pattern1 = Pattern.compile("\\D{2,6}");             // не цифры от 2 до 6 повторений. если 2 числа нет - без ограничений
+
+//        String s1 = "ABCABABDA";
+//        Pattern pattern1 = Pattern.compile("(AB){2,3}");            // соответствие нескольких символов с указанием кол-ва берется в скобки
+
+//        String s1 = "DABCDABABDABABABABD";
+//        Pattern pattern1 = Pattern.compile("D(AB){2,}");            // D (минимум 2 раза AB)
+
+//        String s1 = "DABCDABABDA";
+//        Pattern pattern1 = Pattern.compile("D(AB)?");               // D (AB - 0 или 1 раз)
+//        Pattern pattern1 = Pattern.compile("D(AB)*");               // D (AB - 0 или больше раз)
+
+        String s1 = "abcd abce3 abcfa75ab";
+//        Pattern pattern1 = Pattern.compile("\\Aabcd");              // строка начинается с паттерна
+        Pattern pattern1 = Pattern.compile("5ab\\Z");              // строка заканчивается паттерном
 
 
 
