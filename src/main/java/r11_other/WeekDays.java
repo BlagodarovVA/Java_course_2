@@ -1,6 +1,30 @@
 package r11_other;
 
 public enum WeekDays {
+    MONDAY("bad"),
+    TUESDAY("bad"),
+    WEDNESDAY("so-so"),
+    THURSDAY("so-so"),
+    FRIDAY("good"),
+    SATURDAY("great"),
+    SUNDAY("good");
+
+    private String mood;
+
+    WeekDays(String mood) {
+        this.mood = mood;
+    }
+
+    WeekDays() {
+        System.out.println("Конструктор 2 без параметров");
+    }
+
+    public String getMood(){
+        return mood;
+    }
+}
+
+enum WeekDays2 {
     MONDAY,
     TUESDAY,
     WEDNESDAY,
@@ -9,6 +33,10 @@ public enum WeekDays {
     SATURDAY,
     SUNDAY;
 }
+
+
+
+
 
 class Today {
     WeekDays weekDay;
@@ -31,5 +59,6 @@ class Today {
                 System.out.println(weekDay + " - выходной день");
                 break;
         }
+        System.out.println("Настроение в этот день: " + weekDay.getMood());
     }
 }
