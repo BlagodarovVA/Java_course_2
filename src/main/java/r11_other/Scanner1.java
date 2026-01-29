@@ -40,6 +40,8 @@ public class Scanner1 {
         System.out.println(scanner1.next().charAt(3));      // вывод символа с 4 позиции
 
 
+        scanner.close();
+        scanner1.close();
     }
 }
 
